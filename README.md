@@ -1,2 +1,2 @@
 # Nesaboard
-Simple online whiteboard built using NextJS, Convex, Liveblocks, and Tailwind
+Simple online whiteboard built using NextJS, Convex, Clerk, Liveblocks, and Tailwind
