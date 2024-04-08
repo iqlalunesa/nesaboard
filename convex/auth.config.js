@@ -1,8 +1,9 @@
 export default {
   providers: [
     {
-      domain: "https://caring-hippo-71.clerk.accounts.dev",
-      applicationID: "convex",
+      // Use your convex provider
+      // domain: "https://xxxxxxxxxx.clerk.accounts.dev",
+      // applicationID: "convex",
     },
   ]
 };
