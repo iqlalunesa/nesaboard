@@ -53,7 +53,7 @@ export const OrgSidebar = () => {
               borderRadius: "8px",
               border: "1px solid #E5E7EB",
               justifyContent: "space-between",
-              backgroundColor: "white",
+              backgroundColor: "white"
             }
           }
         }}

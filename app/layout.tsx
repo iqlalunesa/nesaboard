@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { ConvexClientProvider } from "@/providers/convex-client-provider";
 import { ModalProvider } from "@/providers/modal-provider";
 import { Loading } from "@/components/auth/loading";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +28,14 @@ export default function RootLayout({
           <ConvexClientProvider>
             <Toaster />
             <ModalProvider />
+            <ThemeProvider
+    attribute="class"
+    defaultTheme="system"
+    enableSystem
+    disableTransitionOnChange
+  >
             {children}
+            </ThemeProvider>
           </ConvexClientProvider>
         </Suspense>
       </body>

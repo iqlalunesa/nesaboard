@@ -28,7 +28,7 @@ export const ToolButton = ({
         size="icon"
         variant={isActive ? "boardActive" : "board"}
       >
-        <Icon />
+        <Icon style={{color: "dark:#fff"}} />
       </Button>
     </Hint>
   );

@@ -8,6 +8,7 @@ import {
 
 import { SearchInput } from "./search-input";
 import { InviteButton } from "./invite-button";
+import { ModeToggle } from "@/components/theme-switcher";
 
 export const Navbar = () => {
   const { organization } = useOrganization();
@@ -44,6 +45,7 @@ export const Navbar = () => {
       {organization && (
         <InviteButton />
       )}
+      <ModeToggle />
       <UserButton />
     </div>
   );
