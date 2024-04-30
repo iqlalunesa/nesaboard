@@ -9,9 +9,11 @@ import {
 import { SearchInput } from "./search-input";
 import { InviteButton } from "./invite-button";
 import { ModeToggle } from "@/components/theme-switcher";
+import { useTheme } from "next-themes";
 
 export const Navbar = () => {
   const { organization } = useOrganization();
+  const { theme } = useTheme()
 
   return (
     <div className="flex items-center gap-x-4 p-5">
@@ -23,20 +25,11 @@ export const Navbar = () => {
         hidePersonal
         appearance={{
           elements: {
-            rootBox: {
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "100%",
-              maxWidth: "376px",
+            organizationSwitcherPopoverActionButtonIcon: {
+              color: theme === "dark" ? "rgba(255, 255, 255, 0.65)" : "rgba(0,0,0, 0.65)",
             },
-            organizationSwitcherTrigger: {
-              padding: "6px",
-              width: "100%",
-              borderRadius: "8px",
-              border: "1px solid #E5E7EB",
-              justifyContent: "space-between",
-              backgroundColor: "white",
+            organizationSwitcherPopoverActionButtonText: {
+              color: theme === "dark" ? "rgba(255, 255, 255, 0.65)" : "rgba(0,0,0, 0.65)",
             }
           }
         }}
@@ -46,7 +39,18 @@ export const Navbar = () => {
         <InviteButton />
       )}
       <ModeToggle />
-      <UserButton />
+      <UserButton 
+        appearance={{
+          elements: {
+            userButtonPopoverActionButtonIcon: {
+              color: theme === "dark" ? "rgba(255, 255, 255, 0.65)" : "rgba(0,0,0, 0.65)"
+            },
+            userButtonPopoverActionButtonText: {
+              color: theme === "dark" ? "rgba(255, 255, 255, 0.65)" : "rgba(0,0,0, 0.65)"
+            }
+          }
+        }}
+      />
     </div>
   );
 };

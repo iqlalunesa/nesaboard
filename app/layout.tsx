@@ -25,18 +25,18 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Suspense fallback={<Loading />}>
-          <ConvexClientProvider>
-            <Toaster />
-            <ModalProvider />
             <ThemeProvider
     attribute="class"
     defaultTheme="system"
     enableSystem
     disableTransitionOnChange
   >
+          <ConvexClientProvider>
+            <Toaster />
+            <ModalProvider />
             {children}
-            </ThemeProvider>
           </ConvexClientProvider>
+            </ThemeProvider>
         </Suspense>
       </body>
     </html>

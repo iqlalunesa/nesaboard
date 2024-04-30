@@ -7,6 +7,8 @@ import {
   Authenticated,
   ConvexReactClient,
 } from "convex/react";
+import { dark } from "@clerk/themes"
+import { useTheme } from "next-themes";
 
 import { Loading } from "@/components/auth/loading";
 
@@ -21,11 +23,14 @@ const convex = new ConvexReactClient(convexUrl);
 export const ConvexClientProvider = ({
   children,
 }: ConvexClientProviderProps) => {
+  const { theme } = useTheme()
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{
+      baseTheme: theme === "dark" ? dark : undefined
+    }}>
       <ConvexProviderWithClerk useAuth={useAuth} client={convex}>
         <Authenticated>
-        {children}
+          {children}
         </Authenticated>
         <AuthLoading>
           <Loading />
